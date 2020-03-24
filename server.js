@@ -6,8 +6,13 @@ var server = http.Server(app);
 var io = require("socket.io")(server);
 var users = [];
 
+/*
 server.listen(3332, function(){
     console.log("Server address is port 3332.");
+}); */
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Our app is running on port ${ PORT }`);
 });
 
 app.get("/",function(req, res){
